@@ -7,7 +7,7 @@
 ?>
 <!-- wp:paragraph -->
  <div class="article-side-container">
-    <h3 class="side-new-article">新着記事</h3>
+    <h3 class="side-new-article">new article</h3>
     <?php 
     $args = array(
         'posts_per_page' => 4,
@@ -21,8 +21,7 @@
         <?php while ($the_query->have_posts() ) : $the_query->the_post(); ?>
         <article class="article-item side-item">
             <a href="<?php the_permalink(); ?>" class="article-item__link">
-
-                <div class="article-item-thumbnail side-img">
+                <span class="article-item-thumbnail side-img">
                     <?php if ( has_post_thumbnail() ) : ?>
                         <?php the_post_thumbnail('medium'); ?>
                         <?php else: ?>
@@ -32,13 +31,12 @@
                                 $image_url = $image_data[0]; ?>
                                 <img src="<?php  echo esc_url($image_url); ?>" alt="no image">
                                 <?php endif; ?>
-                                <div class="article-item-info">
-                                    <h3 class="article-item-title side-title"><?php the_title(); ?></h3>
+                </span>
+                 <span class="article-item-info">
+                                    <span class="article-item-title side-title"><?php the_title(); ?></span>
                                     <span class ="article-days side-article-days">
-                                        day:<?php echo get_the_date('y/m/d') ?>
-                                    </span>
-                                </div>
-                </div>
+                                        day:<?php echo get_the_date('y/m/d') ?></span>
+                </span>
             </a>
         </article>
         <?php endwhile; ?>

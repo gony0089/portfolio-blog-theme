@@ -25,7 +25,7 @@
 								<div class="swiper-slide"> 
 									<div class="article-container">
 									<a href="<?php the_permalink(); ?>">
-										 <div class="pickup-thumbnail">
+										 <span class="pickup-thumbnail">
 										<?php if ( has_post_thumbnail() ) : ?>
 											<?php the_post_thumbnail( 'large' ); ?>
 										<?php else : ?>
@@ -35,8 +35,8 @@
 											$image_url = $image_data[0];?>
 											<img src="<?php echo esc_url($image_url); ?>" alt="No image">
 										<?php endif; ?>
-										</div>
-										<h3 class="pickup-title"><?php the_title(); ?></h3>
+										</span>
+										<span class="pickup-title"><?php the_title(); ?></span>
 										<span class ="slide-day">
 											day:<?php echo get_the_date('y/m/d') ?>
 										</span>

@@ -5,15 +5,9 @@
  */
 
 ?>
-
-<!-- wp:group {"tagName":"footer"} -->
-        <div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40)">
-        <!-- wp:paragraph -->
-        <p><a href="/privacy-policy">プライバシーポリシー</a></p>
-        <!-- /wp:paragraph -->
-        <!-- wp:paragraph -->
-        <p style="text-align:right">© 2025 [あなたのブログ名 ]</p>
-        <!-- /wp:paragraph -->
-        </div>
+<!-- wp:group {"metadata":{"name":"footer"},"className":"sub-footer-container","layout":{"type":"constrained"}} -->
+<div class="wp-block-group sub-footer-container"><!-- wp:paragraph {"align":"center","fontSize":"small"} -->
+<p class="has-text-align-center has-small-font-size">Copyright © 2025 Technical Portfolio. All Rights Reserved.</p>
+<!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

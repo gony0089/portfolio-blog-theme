@@ -1,23 +1,23 @@
 /*
  Theme Name:   parsonal-chronicle
- Template:     twentytwentyfive
  Description:  Personal blog theme
  Version:      1.0.0
  Author:       Your Name
  Text Domain:  personal-chronicle
 */
 
-
-/*メイン画像のサイズ*/
-.wp-image-101{
-  width: 100%;
-  height: auto;
+/*基本設定*/
+a{
+    color: #000000 ; 
+    text-decoration: none;    
 }
-.mainimage{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 10px !important;
+br{
+  display: none;
+}
+
+/*メイン画像*/
+.hearo-image img{
+  border-radius: 20px;
 }
 /*サイドバーとメインコンテンツを分けるグリッド*/
 .wp-block-group.maincontainer.is-layout-flow.wp-block-group-is-layout-flow{
@@ -30,7 +30,10 @@
  padding-top: 20px;
  margin-bottom: 24px;
 }
-
+a {
+  color: #000000 ; 
+  text-decoration: none;    
+}
 /*メインコンテンツ真ん中の中央寄*/
 .is-layout-flow.wp-block-group-is-layout-flow{
   display: flex;
@@ -39,31 +42,45 @@
 }
 
 /*header*/
-.headercontainer.wp-block-template-part {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #17949D; 
-  height: 71px;
+.wp-block-navigation__responsive-container-open{
+  display: none;
 }
-.header-title.wp-block-site-title.is-layout-flow.wp-block-group-is-layout-flow{
-  font-size: 24px;
+.sub-headercontainer{
+  height: 100%;
 }
-
+.header-title-bar{
+  height: 74px;
+}
+.task-bar{
+  padding: 0 40px;
+}
 /*サイトタイトル*/
-.wp-block-site-title{
-  color: #ffffff;
-  margin: 0;
-  font-size: 24px;
-}
-.wp-block-site-title a:focus,
-.wp-block-site-title a:active,
-.wp-block-site-title a:hover {
+.header-title a:focus,
+.header-title a:active,
+.header-title a:hover {
   outline: none !important;
   text-decoration: none !important;
 }
+.headercontainer a{
+  outline: none;
+  transition: transform 0.3s ease-out, color 0.3s ease-out;
+  display: inline-block; 
+}
+.headercontainer a:hover{
+  transform: translateY(-3px);
+  color: #FF7F50 !important;
+}
+
+/*navigation*/
+.task-bar .task-buttom{
+  padding: 0 19px;
+}
 
 /*パンくずリストの余白など*/
+.breadcrumb-wrapper{
+  width: 100%;
+  padding: 12px;
+}
 .wp-block-group .has-global-padding .is-layout-constrained .wp-block-group-is-layout-constrained{
  text-align: center;
 }
@@ -88,17 +105,12 @@
 }
 
 
-
-
 /* pickup記事 */
 .wp-block-heading.has-text-align-center.is-layout-flow.wp-block-group-is-layout-flow{
 font-size: 30px;
 font-weight: bold;
 width: 100%;
 max-width: 332px;
-border-bottom: 4px solid black;
-padding-bottom: 5px;
-padding-top: 15px;
 }
 /* Swiperコンテナ（カルーセル全体）の基本設定 */
 .pickup-carousel-container {
@@ -106,7 +118,6 @@ padding-top: 15px;
     width: 100%;
     max-width: 717px;
     height: 250px;
-    margin-top: 36px;
 }
   .my-pickup-swiper {
   width: 100%;
@@ -122,10 +133,13 @@ padding-top: 15px;
     max-height:200px; 
     box-shadow: 0px 3px 3px 0px rgb(244, 244, 244);
     border: 0.6px solid #e5e5e5;
+    border-radius: 15px;
+    overflow: hidden;
 }
 .pickup-thumbnail{
   overflow: hidden;
-  margin: 6px;
+  height: 108px;
+  width: 100%;
 }
 
 /* 0.3秒かけて背景色を滑らかに変化させる */
@@ -138,7 +152,6 @@ padding-top: 15px;
 .pickup-thumbnail img {
   display: block;
   width: 100%;
-  max-width: 197px;
   height: 108px;
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
@@ -152,7 +165,8 @@ padding-top: 15px;
 }
 
 .swiper-slide a{
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
   width: 100%;
   height: 100%;
@@ -248,13 +262,14 @@ padding-top: 15px;
   position: relative;
   box-shadow: 0px 2px 2px 2px rgb(226 226 226);
   background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .article-item:hover{
   background-color: #f7f7f7;
   transition: background-color 0.2s ease-out;
 }
 .article-item__link{
-  display: inline-block;
   height: 100%;
   width: 100%;
   text-decoration: none;
@@ -335,16 +350,17 @@ padding-top: 15px;
 
 
 /*サイドバー*/
-.article-side-container{
+.article-side-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 200px;
-  height: 680px;
+  height: 830px;
   padding-left: 14px;
 }
 .sidebar.wp-block-template-part {
   margin-left: 28px;
+  margin-top:27px;
   grid-column: 3 / 4;
   min-width: 220px;
   position: sticky;
@@ -386,10 +402,12 @@ h3.side-new-article {
 
 
 /*フーター*/
-footer.wp-block-template-part{
-  background-color: #BBBBBB;
-  padding: 75px 0;
-  margin-top: 0;
+footer {
+  display: flex;
+  justify-content: center;
+  height: 49px;
+  background-color: #d4ecec;
+
 }
 .wp-block-column.is-layout-flow.wp-block-column-is-layout-flow h2 {
     color: #727272;
@@ -399,7 +417,7 @@ footer.wp-block-template-part{
 }
 
 
-/*レスポンシブ対応*/
+/*レスポンシブ*/
 @media (max-width: 946px){
 .sidebar{
   display: none;
@@ -426,8 +444,16 @@ footer.wp-block-template-part{
   grid-template-columns: repeat(1, 1fr) !important;
   justify-items: center;
 }
+.task-bar{
+  padding: 0 5px 0 3px;
+  font-size: 15px;
+}
+
+.header-title-bar a{
+  font-size: 20px;
 }
 /*クエリ終端*/
+}
 
 @media(max-width:488px){
 .article-item{
@@ -566,6 +592,7 @@ footer.wp-block-template-part{
 .wp-block-group.archivecontainer{
   display: flex;
   justify-content: center;
+  align-items: center;
   padding-top: 50px;
   margin-top: 0;
 }
@@ -653,22 +680,15 @@ width: 100%;
 
 
 
-
-
 /*個別記事*/
 /* single-site-wrapper に適用された不要なスタイルを打ち消す */
-.wp-block-group.alignfull.single-site-wrapper.has-global-padding.is-layout-constrained.wp-block-group-is-layout-constrained {
-    display: block;          /* display: flex を上書き */
-    position: static;        /* position: absolute を上書き */
-    justify-content: initial;
-    align-items: initial;
-    bottom: auto;
-    left: auto;
-    grid-column: 2/3;
-    padding: 20px !important;
-    height: 100%;
+.single-site-wrapper{
+  grid-column: 2/3;
+  padding: 20px !important;
+  height: 100%;
 }
-.wp-block-group.signal-site.is-layout-flow.wp-block-group-is-layout-flow {
+
+.wp-block-group.single-site{
     display: grid;
     grid-template-columns: 1fr minmax(0, 730px) 1fr;
     margin: 0 0 50px 0;
@@ -706,6 +726,11 @@ width: 100%;
   color: #000000;
   font-family: "Noto Sans JP", sans-serif;
   overflow-wrap: break-word;
+}
+.archive-day{
+  position: absolute;
+  left: 10px;
+  bottom: 5px;
 }
 /*記事の幅fit*/
 .wp-block-post-content.alignfull.has-global-padding {
@@ -788,4 +813,9 @@ width: 100%;
   left: 0;
   top: 0;
   font-weight: 500;
+}
+
+.article-container br,
+.article-item br {
+  display: none;
 }

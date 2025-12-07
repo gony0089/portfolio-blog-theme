@@ -1,8 +1,41 @@
-<!-- wp:template-part {"slug":"header","className":"headercontainer"} /-->
-<!-- wp:group {"tagName":"main","className":"archivecontainer"} -->
-<main class="wp-block-group archivecontainer">
-	<!-- wp:template-part {"slug":"sidebar","className":"sidebar"} /-->
-</main>
+<!-- wp:template-part {"slug":"header","theme":"sintama","className":"headercontainer"} /-->
+
+<!-- wp:group {"tagName":"main","className":"archivecontainer","layout":{"type":"constrained"}} -->
+<main class="wp-block-group archivecontainer"><!-- wp:group {"metadata":{"name":"中央コンテンツ"},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:group {"metadata":{"name":"パンくずリスト"},"className":"sub-breadcrumb-wrapper","layout":{"type":"constrained","justifyContent":"left"}} -->
+<div class="wp-block-group sub-breadcrumb-wrapper"><!-- wp:shortcode -->
+[display_breadcrumb]
+<!-- /wp:shortcode --></div>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer"} /-->
+<!-- wp:paragraph {"align":"center","className":"daimei"} -->
+<p class="has-text-align-center daimei">記事一覧</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:query {"queryId":24,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":null,"parents":[],"format":[]},"layout":{"type":"constrained"}} -->
+<div class="wp-block-query"><!-- wp:post-template -->
+<!-- wp:post-featured-image /-->
+
+<!-- wp:post-title {"isLink":true} /-->
+
+<!-- wp:group {"className":"archive-day","layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal","justifyContent":"left"}} -->
+<div class="wp-block-group archive-day"><!-- wp:paragraph {"fontSize":"small"} -->
+<p class="has-small-font-size">投稿日:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:post-date {"metadata":{"bindings":{"datetime":{"source":"core/post-data","args":{"field":"date"}}}},"fontSize":"small"} /--></div>
+<!-- /wp:group -->
+<!-- /wp:post-template -->
+
+<!-- wp:query-pagination -->
+<!-- wp:query-pagination-previous /-->
+
+<!-- wp:query-pagination-numbers /-->
+
+<!-- wp:query-pagination-next /-->
+<!-- /wp:query-pagination --></div>
+<!-- /wp:query --></div>
+<!-- /wp:group --></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","theme":"sintama","className":"footer-container"} /-->

@@ -52,7 +52,7 @@
         <?php while ( $the_query->have_posts() ) : $the_query->the_post(); // 投稿がある限り、1件ずつ取り出すループ ?>
             <article class="article-item">
                 <a href="<?php the_permalink(); ?>" class="article-item__link">
-                    <div class="article-item-thumbnail">
+                    <span class="article-item-thumbnail">
                         <?php if ( has_post_thumbnail() ) : ?>
                             <?php the_post_thumbnail('medium'); // アイキャッチ画像を中サイズで表示 ?>
                         <?php else: ?>
@@ -63,13 +63,13 @@
                             ?>
 							<img src="<?php echo esc_url($image_url); ?>" alt="No image">
                         <?php endif; ?>
-                        <div class="article-item-info">
-                        <h3 class="article-item-title"><?php the_title(); ?></h3>
+                        <span class="article-item-info">
+                        <span class="article-item-title"><?php the_title(); ?></span>
                         <span class ="article-days">
                                             day:<?php echo get_the_date('y/m/d') ?>
                         </span>
-                        </div>
-                    </div>
+                        </span>
+                     </span>
                 </a>
             </article>
         <?php endwhile;  ?>
