@@ -124,7 +124,7 @@ function fetchPosts() {
 		//	autoplay:{
 		//		delay:2000,
 		//		disableOnInteration: false,
-			//},
+			//},//
 			pagination: {
 				el: '.swiper-pagination',
 				clickable: true,
