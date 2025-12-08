@@ -1,6 +1,10 @@
 {
 	"settings": {
-		"appearanceTools": false,
+		"appearanceTools": true,
+		"layout": {
+			"contentSize":"840px",
+			"wideSize": "1280px"
+		},
 		"color": {
 			"defaultDuotone": false,
 			"defaultGradients": false,

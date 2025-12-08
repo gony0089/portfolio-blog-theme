@@ -121,10 +121,10 @@ function fetchPosts() {
 			spaceBetween: 15,
 			slidesPerView: initialSlidesPerView,
 
-		//	autoplay:{
-		//		delay:2000,
-		//		disableOnInteration: false,
-			//},//
+		autoplay:{
+			delay:2000,
+			disableOnInteration: false,
+			},
 			pagination: {
 				el: '.swiper-pagination',
 				clickable: true,
